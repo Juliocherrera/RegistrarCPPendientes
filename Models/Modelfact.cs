@@ -101,7 +101,7 @@ namespace RegistrarCPPendientes.Models
             DataTable dataTable = new DataTable();
             using (SqlConnection connection = new SqlConnection(this._ConnectionString))
             {
-                using (SqlCommand selectCommand = new SqlCommand("SELECT DISTINCT t1.segmento FROM segmentosportimbrar_JR t1 LEFT JOIN VISTA_Carta_Porte t2 ON t2.Folio = t1.segmento WHERE t2.Folio IS NULL AND t1.billto = 'SAYER'", connection))
+                using (SqlCommand selectCommand = new SqlCommand("SELECT DISTINCT t1.segmento FROM segmentosportimbrar_JR t1 LEFT JOIN VISTA_Carta_Porte t2 ON t2.Folio = t1.segmento WHERE t2.Folio IS NULL AND t1.billto = 'LIVERDED'", connection))
                 {
                     selectCommand.CommandType = CommandType.Text;
                     selectCommand.CommandTimeout = 1000;
