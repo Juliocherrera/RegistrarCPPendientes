@@ -37,23 +37,29 @@ namespace RegistrarCPPendientes
                         if (separados7 != null)
                         {
                             foreach (var elem in separados7)
+                                
                             {
-                                string Folio = cpfolio;
                                 string Serie = elem.serie;
-                                string UUID = elem.uuid;
-                                string Pdf_xml_descarga = elem.pdfAndXmlDownload;
-                                string Pdf_descargaFactura = "https://canal1.xsa.com.mx:9050" + elem.pdfDownload;
-                                string xlm_descargaFactura = "https://canal1.xsa.com.mx:9050" + elem.xmlDownload;
-                                string cancelFactura = "";
-                                string LegNum = cpfolio;
-                                string Fecha = elem.fecha;
-                                string Total = elem.monto;
-                                string Moneda = elem.tipoMoneda;
-                                string RFC = elem.rfc;
-                                string Origen = "0";
-                                string Destino = "";
+                                if (Serie != "TDRT" || Serie != "NCT")
+                                {
+                                    string Folio = cpfolio;
 
-                                facLabControler.insertfaltantes(Folio, Serie, UUID, Pdf_xml_descarga, Pdf_descargaFactura, xlm_descargaFactura, cancelFactura, LegNum, Fecha, Total, Moneda, RFC, Origen, Destino);
+                                    string UUID = elem.uuid;
+                                    string Pdf_xml_descarga = elem.pdfAndXmlDownload;
+                                    string Pdf_descargaFactura = "https://canal1.xsa.com.mx:9050" + elem.pdfDownload;
+                                    string xlm_descargaFactura = "https://canal1.xsa.com.mx:9050" + elem.xmlDownload;
+                                    string cancelFactura = "";
+                                    string LegNum = cpfolio;
+                                    string Fecha = elem.fecha;
+                                    string Total = elem.monto;
+                                    string Moneda = elem.tipoMoneda;
+                                    string RFC = elem.rfc;
+                                    string Origen = "0";
+                                    string Destino = "";
+
+                                    facLabControler.insertfaltantes(Folio, Serie, UUID, Pdf_xml_descarga, Pdf_descargaFactura, xlm_descargaFactura, cancelFactura, LegNum, Fecha, Total, Moneda, RFC, Origen, Destino);
+                                }
+                                
                             }
                         }
                     }
